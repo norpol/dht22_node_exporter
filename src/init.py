@@ -52,9 +52,10 @@ def read_serial(device):
     loop through serial device
     """
     import serial
-    with serial.Serial(device, 19200, timeout=1) as ser:
-        line = ser.read()
-        yield parse_line(line)
+    with serial.Serial('/dev/ttyUSB0', baudrate=9600, timeout=5) as ser:
+        while True:
+            line = ser.readline().decode()
+            yield parse_line(line)
 
 def parse_line(line):
     """
