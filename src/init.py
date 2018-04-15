@@ -12,11 +12,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
             "input", nargs="?", default="-",
-            metavar="SERIAL", type=argparse.FileType("r"),
+            metavar="SERIAL", type=argparse,
             help="path to the serial-device or testing file, default stdin '-'")
     parser.add_argument(
             "output", nargs="?", default="-",
-            metavar="OUTPUT", type=argparse.FileType("w"),
+            metavar="OUTPUT", type=argparse,
             help="script output, default stdout '-'")
 
     args = parser.parse_args()
