@@ -119,6 +119,7 @@ def combine_two_tuples(data):
         if len(two) == 2:
             snd=two[1][0]
             if snd[0] == 'sensor_reset' and snd[1] == 'True':
+                del(two[0])
                 yield two.pop()
             else:
                 yield two.pop()
